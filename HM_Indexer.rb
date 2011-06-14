@@ -17,6 +17,7 @@ class HM_Indexer
     item[:year] = tag.year or 'None'
     item[:genre] = tag.genre or 'None'
     item[:track] = tag.track or '0'
+    puts item.inspect
     begin
       @dataset.insert(item)
       return true

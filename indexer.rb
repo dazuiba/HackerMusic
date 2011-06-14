@@ -12,5 +12,6 @@ else
   DB = Sequel.sqlite($CONFIG[:database][:file_name])
 end
 indexer = HM_Indexer.new(DB)
+puts "scan: #{@music_dir}"
 indexer.scan(@music_dir)
 puts 'Complete'

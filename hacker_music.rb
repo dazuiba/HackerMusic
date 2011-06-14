@@ -382,6 +382,7 @@ end
 
 get '/' do
   @songs = $DB[:plays].join(:songs, :id => :song_id).group(:song_id).order(:played_at.desc).limit(10)
+  puts "******************** #{@styles}"
   haml :index
 end
 

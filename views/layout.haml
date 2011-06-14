@@ -2,7 +2,7 @@
 %html
   %head
     %title
-      #{@title} : #{@current_song[:title]} by #{@current_song[:artist]}
+      #{@title}
     - @styles.each do |s|
       %link{:href => '/style/' + s, :rel => 'stylesheet', :type => 'text/css'}
     - @scripts.each do |s|
@@ -73,8 +73,6 @@
             %br
             %small= 'By: ' + song[:artist]
             %br
-            %small= 'Voted by ' + 
-            %a{:href => "/user/#{song[:user_id]}"}= song[:name]
       - if @my_votes
         %h2 My Votes: (#{($CONFIG[:settings][:max_votes].to_i - @my_votes.count).to_s} left)
         %ul
